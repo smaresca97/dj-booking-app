@@ -1,0 +1,534 @@
+[debug] [2026-04-30T14:57:22.217Z] ----------------------------------------------------------------------
+[debug] [2026-04-30T14:57:22.218Z] Command:       /Users/Work/.nvm/versions/node/v18.20.5/bin/node /Users/Work/.npm-global/lib/node_modules/firebase-tools/lib/bin/firebase.js hosting:sites:list --project dj-booking-app-9931b
+[debug] [2026-04-30T14:57:22.218Z] CLI Version:   13.29.1
+[debug] [2026-04-30T14:57:22.218Z] Platform:      darwin
+[debug] [2026-04-30T14:57:22.218Z] Node Version:  v18.20.5
+[debug] [2026-04-30T14:57:22.219Z] Time:          Thu Apr 30 2026 16:57:22 GMT+0200 (Central European Summer Time)
+[debug] [2026-04-30T14:57:22.219Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-30T14:57:22.222Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-30T14:57:22.223Z] > authorizing via signed-in user (simone.maresca44@gmail.com)
+[debug] [2026-04-30T14:57:22.223Z] [iam] checking project dj-booking-app-9931b for permissions ["firebase.projects.get","firebasehosting.sites.get"]
+[debug] [2026-04-30T14:57:22.224Z] Checked if tokens are valid: false, expires at: 1777561878257
+[debug] [2026-04-30T14:57:22.224Z] Checked if tokens are valid: false, expires at: 1777561878257
+[debug] [2026-04-30T14:57:22.225Z] > refreshing access token with scopes: []
+[debug] [2026-04-30T14:57:22.226Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-04-30T14:57:22.226Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-30T14:57:22.217Z] ----------------------------------------------------------------------
+[debug] [2026-04-30T14:57:22.218Z] Command:       /Users/Work/.nvm/versions/node/v18.20.5/bin/node /Users/Work/.npm-global/lib/node_modules/firebase-tools/lib/bin/firebase.js projects:list
+[debug] [2026-04-30T14:57:22.218Z] CLI Version:   13.29.1
+[debug] [2026-04-30T14:57:22.218Z] Platform:      darwin
+[debug] [2026-04-30T14:57:22.218Z] Node Version:  v18.20.5
+[debug] [2026-04-30T14:57:22.219Z] Time:          Thu Apr 30 2026 16:57:22 GMT+0200 (Central European Summer Time)
+[debug] [2026-04-30T14:57:22.219Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-30T14:57:22.222Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-30T14:57:22.223Z] > authorizing via signed-in user (simone.maresca44@gmail.com)
+[debug] [2026-04-30T14:57:22.225Z] Checked if tokens are valid: false, expires at: 1777561878257
+[debug] [2026-04-30T14:57:22.226Z] Checked if tokens are valid: false, expires at: 1777561878257
+[debug] [2026-04-30T14:57:22.226Z] > refreshing access token with scopes: []
+[debug] [2026-04-30T14:57:22.227Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-04-30T14:57:22.227Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-30T14:57:22.423Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-04-30T14:57:22.425Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-04-30T14:57:22.423Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-30T14:57:22.439Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions [none]
+[debug] [2026-04-30T14:57:22.439Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions x-goog-quota-user=projects/dj-booking-app-9931b
+[debug] [2026-04-30T14:57:22.439Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.get"]}
+[debug] [2026-04-30T14:57:22.425Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-30T14:57:22.443Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2026-04-30T14:57:23.031Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2026-04-30T14:57:23.446Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions 200
+[debug] [2026-04-30T14:57:23.446Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions {}
+[debug] [2026-04-30T14:57:23.447Z] [iam] error while checking permissions, command may fail: Authorization failed. This account is missing the following required permissions on project dj-booking-app-9931b:
+
+  firebase.projects.get
+  firebasehosting.sites.get
+[debug] [2026-04-30T14:57:23.448Z] Checked if tokens are valid: true, expires at: 1777564641423
+[debug] [2026-04-30T14:57:23.448Z] Checked if tokens are valid: true, expires at: 1777564641423
+[debug] [2026-04-30T14:57:23.449Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/dj-booking-app-9931b/sites pageToken=&pageSize=10
+[debug] [2026-04-30T14:57:23.944Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/dj-booking-app-9931b/sites 403
+[debug] [2026-04-30T14:57:23.945Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/dj-booking-app-9931b/sites {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[error] 
+[error] Error: Request to https://firebasehosting.googleapis.com/v1beta1/projects/dj-booking-app-9931b/sites?pageToken=&pageSize=10 had HTTP Error: 403, The caller does not have permission
+[debug] [2026-04-30T14:57:23.948Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 403,
+      "message": "The caller does not have permission",
+      "status": "PERMISSION_DENIED"
+    }
+  },
+  "response": {
+    "statusCode": 403
+  }
+}
+[debug] [2026-04-30T14:57:50.346Z] ----------------------------------------------------------------------
+[debug] [2026-04-30T14:57:50.347Z] Command:       /Users/Work/.nvm/versions/node/v18.20.5/bin/node /Users/Work/.npm-global/lib/node_modules/firebase-tools/lib/bin/firebase.js deploy --only hosting --project dj-booking-app-9931b
+[debug] [2026-04-30T14:57:50.348Z] CLI Version:   13.29.1
+[debug] [2026-04-30T14:57:50.348Z] Platform:      darwin
+[debug] [2026-04-30T14:57:50.348Z] Node Version:  v18.20.5
+[debug] [2026-04-30T14:57:50.348Z] Time:          Thu Apr 30 2026 16:57:50 GMT+0200 (Central European Summer Time)
+[debug] [2026-04-30T14:57:50.349Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-30T14:57:50.384Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-30T14:57:50.384Z] > authorizing via signed-in user (simone.maresca44@gmail.com)
+[debug] [2026-04-30T14:57:50.385Z] [iam] checking project dj-booking-app-9931b for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-04-30T14:57:50.385Z] Checked if tokens are valid: true, expires at: 1777564641425
+[debug] [2026-04-30T14:57:50.385Z] Checked if tokens are valid: true, expires at: 1777564641425
+[debug] [2026-04-30T14:57:50.386Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions [none]
+[debug] [2026-04-30T14:57:50.386Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions x-goog-quota-user=projects/dj-booking-app-9931b
+[debug] [2026-04-30T14:57:50.386Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-04-30T14:57:51.247Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions 200
+[debug] [2026-04-30T14:57:51.248Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions {}
+[debug] [2026-04-30T14:57:51.248Z] [iam] error while checking permissions, command may fail: Authorization failed. This account is missing the following required permissions on project dj-booking-app-9931b:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2026-04-30T14:57:51.249Z] Checked if tokens are valid: true, expires at: 1777564641425
+[debug] [2026-04-30T14:57:51.249Z] Checked if tokens are valid: true, expires at: 1777564641425
+[debug] [2026-04-30T14:57:51.250Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dj-booking-app-9931b [none]
+[debug] [2026-04-30T14:57:51.631Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dj-booking-app-9931b 403
+[debug] [2026-04-30T14:57:51.632Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dj-booking-app-9931b {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2026-04-30T14:57:51.633Z] Request to https://firebase.googleapis.com/v1beta1/projects/dj-booking-app-9931b had HTTP Error: 403, The caller does not have permission
+[debug] [2026-04-30T14:57:51.634Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/dj-booking-app-9931b had HTTP Error: 403, The caller does not have permission
+    at responseToError (/Users/Work/.npm-global/lib/node_modules/firebase-tools/lib/responseToError.js:52:12)
+    at RetryOperation._fn (/Users/Work/.npm-global/lib/node_modules/firebase-tools/lib/apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project dj-booking-app-9931b. Please make sure the project exists and your account has permission to access it.
+[debug] [2026-04-30T14:59:07.751Z] ----------------------------------------------------------------------
+[debug] [2026-04-30T14:59:07.752Z] Command:       /Users/Work/.nvm/versions/node/v18.20.5/bin/node /Users/Work/.npm-global/lib/node_modules/firebase-tools/lib/bin/firebase.js login:add smaresca97@gmail.com
+[debug] [2026-04-30T14:59:07.752Z] CLI Version:   13.29.1
+[debug] [2026-04-30T14:59:07.752Z] Platform:      darwin
+[debug] [2026-04-30T14:59:07.752Z] Node Version:  v18.20.5
+[debug] [2026-04-30T14:59:07.753Z] Time:          Thu Apr 30 2026 16:59:07 GMT+0200 (Central European Summer Time)
+[debug] [2026-04-30T14:59:07.753Z] ----------------------------------------------------------------------
+[debug] 
+[error] 
+[error] Error: Cannot run "login:add" in non-interactive mode.
+[debug] [2026-04-30T14:59:13.523Z] ----------------------------------------------------------------------
+[debug] [2026-04-30T14:59:13.524Z] Command:       /Users/Work/.nvm/versions/node/v18.20.5/bin/node /Users/Work/.npm-global/lib/node_modules/firebase-tools/lib/bin/firebase.js login:add smaresca97@gmail.com
+[debug] [2026-04-30T14:59:13.524Z] CLI Version:   13.29.1
+[debug] [2026-04-30T14:59:13.524Z] Platform:      darwin
+[debug] [2026-04-30T14:59:13.524Z] Node Version:  v18.20.5
+[debug] [2026-04-30T14:59:13.525Z] Time:          Thu Apr 30 2026 16:59:13 GMT+0200 (Central European Summer Time)
+[debug] [2026-04-30T14:59:13.525Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=253091613&redirect_uri=http%3A%2F%2Flocalhost%3A9005&login_hint=smaresca97%40gmail.com
+[info] 
+[info] Waiting for authentication...
+[debug] [2026-04-30T14:59:19.672Z] >>> [apiv2][query] POST https://accounts.google.com/o/oauth2/token [none]
+[debug] [2026-04-30T14:59:19.672Z] >>> [apiv2][body] POST https://accounts.google.com/o/oauth2/token [omitted]
+[debug] [2026-04-30T14:59:19.879Z] <<< [apiv2][status] POST https://accounts.google.com/o/oauth2/token 200
+[debug] [2026-04-30T14:59:56.247Z] ----------------------------------------------------------------------
+[debug] [2026-04-30T14:59:56.248Z] Command:       /Users/Work/.nvm/versions/node/v18.20.5/bin/node /Users/Work/.npm-global/lib/node_modules/firebase-tools/lib/bin/firebase.js hosting:sites:list --project dj-booking-app-9931b
+[debug] [2026-04-30T14:59:56.249Z] CLI Version:   13.29.1
+[debug] [2026-04-30T14:59:56.249Z] Platform:      darwin
+[debug] [2026-04-30T14:59:56.249Z] Node Version:  v18.20.5
+[debug] [2026-04-30T14:59:56.250Z] Time:          Thu Apr 30 2026 16:59:56 GMT+0200 (Central European Summer Time)
+[debug] [2026-04-30T14:59:56.250Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-30T14:59:56.291Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-30T14:59:56.292Z] > authorizing via signed-in user (smaresca97@gmail.com)
+[debug] [2026-04-30T14:59:56.292Z] [iam] checking project dj-booking-app-9931b for permissions ["firebase.projects.get","firebasehosting.sites.get"]
+[debug] [2026-04-30T14:59:56.293Z] No OAuth tokens found
+[debug] [2026-04-30T14:59:56.293Z] No OAuth tokens found
+[debug] [2026-04-30T14:59:56.293Z] > refreshing access token with scopes: []
+[debug] [2026-04-30T14:59:56.294Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-04-30T14:59:56.295Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-30T14:59:56.247Z] ----------------------------------------------------------------------
+[debug] [2026-04-30T14:59:56.248Z] Command:       /Users/Work/.nvm/versions/node/v18.20.5/bin/node /Users/Work/.npm-global/lib/node_modules/firebase-tools/lib/bin/firebase.js projects:list
+[debug] [2026-04-30T14:59:56.249Z] CLI Version:   13.29.1
+[debug] [2026-04-30T14:59:56.249Z] Platform:      darwin
+[debug] [2026-04-30T14:59:56.249Z] Node Version:  v18.20.5
+[debug] [2026-04-30T14:59:56.250Z] Time:          Thu Apr 30 2026 16:59:56 GMT+0200 (Central European Summer Time)
+[debug] [2026-04-30T14:59:56.250Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-30T14:59:56.291Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-30T14:59:56.292Z] > authorizing via signed-in user (smaresca97@gmail.com)
+[debug] [2026-04-30T14:59:56.294Z] No OAuth tokens found
+[debug] [2026-04-30T14:59:56.294Z] No OAuth tokens found
+[debug] [2026-04-30T14:59:56.294Z] > refreshing access token with scopes: []
+[debug] [2026-04-30T14:59:56.296Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-04-30T14:59:56.296Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-30T14:59:56.491Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-04-30T14:59:56.502Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-04-30T14:59:56.492Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-30T14:59:56.499Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions [none]
+[debug] [2026-04-30T14:59:56.499Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions x-goog-quota-user=projects/dj-booking-app-9931b
+[debug] [2026-04-30T14:59:56.499Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.get"]}
+[debug] [2026-04-30T14:59:56.502Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-30T14:59:56.511Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2026-04-30T14:59:57.172Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2026-04-30T14:59:57.268Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions 200
+[debug] [2026-04-30T14:59:57.268Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.get"]}
+[debug] [2026-04-30T14:59:57.268Z] Checked if tokens are valid: true, expires at: 1777564795492
+[debug] [2026-04-30T14:59:57.268Z] Checked if tokens are valid: true, expires at: 1777564795492
+[debug] [2026-04-30T14:59:57.269Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/dj-booking-app-9931b/sites pageToken=&pageSize=10
+[debug] [2026-04-30T14:59:58.689Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/dj-booking-app-9931b/sites 200
+[debug] [2026-04-30T15:00:17.905Z] ----------------------------------------------------------------------
+[debug] [2026-04-30T15:00:17.906Z] Command:       /Users/Work/.nvm/versions/node/v18.20.5/bin/node /Users/Work/.npm-global/lib/node_modules/firebase-tools/lib/bin/firebase.js deploy --only hosting --project dj-booking-app-9931b
+[debug] [2026-04-30T15:00:17.906Z] CLI Version:   13.29.1
+[debug] [2026-04-30T15:00:17.906Z] Platform:      darwin
+[debug] [2026-04-30T15:00:17.906Z] Node Version:  v18.20.5
+[debug] [2026-04-30T15:00:17.907Z] Time:          Thu Apr 30 2026 17:00:17 GMT+0200 (Central European Summer Time)
+[debug] [2026-04-30T15:00:17.907Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-30T15:00:17.941Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-30T15:00:17.942Z] > authorizing via signed-in user (smaresca97@gmail.com)
+[debug] [2026-04-30T15:00:17.942Z] [iam] checking project dj-booking-app-9931b for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-04-30T15:00:17.943Z] No OAuth tokens found
+[debug] [2026-04-30T15:00:17.943Z] No OAuth tokens found
+[debug] [2026-04-30T15:00:17.943Z] > refreshing access token with scopes: []
+[debug] [2026-04-30T15:00:17.944Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-04-30T15:00:17.944Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-30T15:00:18.113Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-04-30T15:00:18.113Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-30T15:00:18.120Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions [none]
+[debug] [2026-04-30T15:00:18.121Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions x-goog-quota-user=projects/dj-booking-app-9931b
+[debug] [2026-04-30T15:00:18.121Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-04-30T15:00:18.905Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions 200
+[debug] [2026-04-30T15:00:18.906Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-04-30T15:00:18.908Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:18.909Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:18.910Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dj-booking-app-9931b [none]
+[debug] [2026-04-30T15:00:19.497Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dj-booking-app-9931b 200
+[debug] [2026-04-30T15:00:19.497Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dj-booking-app-9931b {"projectId":"dj-booking-app-9931b","projectNumber":"977337121382","displayName":"dj-booking-app","name":"projects/dj-booking-app-9931b","resources":{"hostingSite":"dj-booking-app-9931b"},"state":"ACTIVE","etag":"1_c0b5c9ab-9105-4673-a9e4-d2c4b633cd3d"}
+[info] 
+[info] === Deploying to 'dj-booking-app-9931b'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-04-30T15:00:19.504Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:19.504Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:19.504Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions [none]
+[debug] [2026-04-30T15:00:19.505Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-04-30T15:00:22.471Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions 200
+[debug] [2026-04-30T15:00:22.471Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions {"name":"projects/977337121382/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[dj-booking-app-9931b]: beginning deploy... 
+[info] i  hosting[dj-booking-app-9931b]: found 5 files in dist/dj-booking-app/browser 
+[debug] [2026-04-30T15:00:22.491Z] [hosting] uploading with 200 concurrency
+[debug] [2026-04-30T15:00:22.492Z] [hosting] hash cache [ZGlzdC9kai1ib29raW5nLWFwcC9icm93c2Vy] not populated
+[debug] [2026-04-30T15:00:22.526Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:22.526Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:22.527Z] [hosting] hash cache [ZGlzdC9kai1ib29raW5nLWFwcC9icm93c2Vy] stored for 5 files
+[debug] [2026-04-30T15:00:22.527Z] [hosting][hash queue][FINAL] {"max":32,"min":4,"avg":10.2,"active":0,"complete":5,"success":5,"errored":0,"retried":0,"total":5,"elapsed":35}
+[debug] [2026-04-30T15:00:22.528Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/977337121382/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4:populateFiles [none]
+[debug] [2026-04-30T15:00:22.528Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/977337121382/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4:populateFiles {"files":{"/favicon.ico":"f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837","/index.html":"afc8997f94d6ae42b401acfcdd8dfafe63e589ea8fa1d7224c2d5a4ca9dd19e2","/styles-63CBOIBL.css":"2672b66ad096be41e756fb5bb8dd6fc016ef06d8b6924483f3005bd7bd5e5817","/polyfills-FFHMD2TL.js":"02522c25699ab93e99a93914c3fc1158c874090dc123472be90c6746e6cf2d13","/main-YTSVBCUK.js":"7721a6f2a8fc083877ea78afc9388551ab499aeacb4b36849236ab82ebd246a3"}}
+[debug] [2026-04-30T15:00:23.697Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/977337121382/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4:populateFiles 200
+[debug] [2026-04-30T15:00:23.698Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/977337121382/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4:populateFiles {"uploadRequiredHashes":["2672b66ad096be41e756fb5bb8dd6fc016ef06d8b6924483f3005bd7bd5e5817","02522c25699ab93e99a93914c3fc1158c874090dc123472be90c6746e6cf2d13","7721a6f2a8fc083877ea78afc9388551ab499aeacb4b36849236ab82ebd246a3","f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837","afc8997f94d6ae42b401acfcdd8dfafe63e589ea8fa1d7224c2d5a4ca9dd19e2"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files"}
+[debug] [2026-04-30T15:00:23.699Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:23.700Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:23.700Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:23.700Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:23.702Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:23.702Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:23.702Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:23.702Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:23.703Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:23.703Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:23.703Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/2672b66ad096be41e756fb5bb8dd6fc016ef06d8b6924483f3005bd7bd5e5817 [none]
+[debug] [2026-04-30T15:00:23.704Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/2672b66ad096be41e756fb5bb8dd6fc016ef06d8b6924483f3005bd7bd5e5817 [stream]
+[debug] [2026-04-30T15:00:23.706Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/02522c25699ab93e99a93914c3fc1158c874090dc123472be90c6746e6cf2d13 [none]
+[debug] [2026-04-30T15:00:23.706Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/02522c25699ab93e99a93914c3fc1158c874090dc123472be90c6746e6cf2d13 [stream]
+[debug] [2026-04-30T15:00:23.708Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/7721a6f2a8fc083877ea78afc9388551ab499aeacb4b36849236ab82ebd246a3 [none]
+[debug] [2026-04-30T15:00:23.708Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/7721a6f2a8fc083877ea78afc9388551ab499aeacb4b36849236ab82ebd246a3 [stream]
+[debug] [2026-04-30T15:00:23.709Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837 [none]
+[debug] [2026-04-30T15:00:23.709Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837 [stream]
+[debug] [2026-04-30T15:00:23.711Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/afc8997f94d6ae42b401acfcdd8dfafe63e589ea8fa1d7224c2d5a4ca9dd19e2 [none]
+[debug] [2026-04-30T15:00:23.711Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/afc8997f94d6ae42b401acfcdd8dfafe63e589ea8fa1d7224c2d5a4ca9dd19e2 [stream]
+[debug] [2026-04-30T15:00:23.713Z] [hosting][populate queue][FINAL] {"max":1177,"min":1177,"avg":1177,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1187}
+[debug] [2026-04-30T15:00:23.713Z] [hosting] uploads queued: 5
+[info] i  hosting: uploading new files [0/5] (0%) 
+[debug] [2026-04-30T15:00:24.591Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/02522c25699ab93e99a93914c3fc1158c874090dc123472be90c6746e6cf2d13 200
+[debug] [2026-04-30T15:00:24.591Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/02522c25699ab93e99a93914c3fc1158c874090dc123472be90c6746e6cf2d13 [stream]
+[debug] [2026-04-30T15:00:24.670Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837 200
+[debug] [2026-04-30T15:00:24.670Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837 [stream]
+[debug] [2026-04-30T15:00:24.774Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/7721a6f2a8fc083877ea78afc9388551ab499aeacb4b36849236ab82ebd246a3 200
+[debug] [2026-04-30T15:00:24.774Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/7721a6f2a8fc083877ea78afc9388551ab499aeacb4b36849236ab82ebd246a3 [stream]
+[debug] [2026-04-30T15:00:24.974Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/afc8997f94d6ae42b401acfcdd8dfafe63e589ea8fa1d7224c2d5a4ca9dd19e2 200
+[debug] [2026-04-30T15:00:24.974Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/afc8997f94d6ae42b401acfcdd8dfafe63e589ea8fa1d7224c2d5a4ca9dd19e2 [stream]
+[debug] [2026-04-30T15:00:25.113Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/2672b66ad096be41e756fb5bb8dd6fc016ef06d8b6924483f3005bd7bd5e5817 200
+[debug] [2026-04-30T15:00:25.113Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4/files/2672b66ad096be41e756fb5bb8dd6fc016ef06d8b6924483f3005bd7bd5e5817 [stream]
+[debug] [2026-04-30T15:00:25.113Z] [hosting][upload queue][FINAL] {"max":1415,"min":891,"avg":1123.8,"active":0,"complete":5,"success":5,"errored":0,"retried":0,"total":5,"elapsed":1415}
+[info] i  hosting: upload complete 
+[info] ✔  hosting[dj-booking-app-9931b]: file upload complete 
+[debug] [2026-04-30T15:00:25.113Z] [hosting] deploy completed after 2637ms
+[debug] [2026-04-30T15:00:25.114Z] [
+  {
+    "config": {
+      "public": "dist/dj-booking-app/browser",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "dj-booking-app-9931b"
+    },
+    "version": "projects/977337121382/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4"
+  }
+]
+[info] i  hosting[dj-booking-app-9931b]: finalizing version... 
+[debug] [2026-04-30T15:00:25.115Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:25.115Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:25.116Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4 updateMask=status%2Cconfig
+[debug] [2026-04-30T15:00:25.116Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2026-04-30T15:00:26.902Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4 200
+[debug] [2026-04-30T15:00:26.903Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4 {"name":"projects/977337121382/sites/dj-booking-app-9931b/versions/f0d9c77031dcede4","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-04-30T15:00:20.430877Z","createUser":{"email":"smaresca97@gmail.com"},"finalizeTime":"2026-04-30T15:00:26.715381Z","finalizeUser":{"email":"smaresca97@gmail.com"}}
+[debug] [2026-04-30T15:00:26.903Z] [hosting] finalized version for dj-booking-app-9931b:[object Object]
+[info] ✔  hosting[dj-booking-app-9931b]: version finalized 
+[info] i  hosting[dj-booking-app-9931b]: releasing new version... 
+[debug] [2026-04-30T15:00:26.904Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:26.904Z] Checked if tokens are valid: true, expires at: 1777564817113
+[debug] [2026-04-30T15:00:26.905Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/channels/live/releases versionName=projects%2F977337121382%2Fsites%2Fdj-booking-app-9931b%2Fversions%2Ff0d9c77031dcede4
+[debug] [2026-04-30T15:00:26.906Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/channels/live/releases {}
+[debug] [2026-04-30T15:00:28.510Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/channels/live/releases 200
+[debug] [2026-04-30T15:07:10.011Z] ----------------------------------------------------------------------
+[debug] [2026-04-30T15:07:10.012Z] Command:       /Users/Work/.nvm/versions/node/v18.20.5/bin/node /Users/Work/.npm-global/lib/node_modules/firebase-tools/lib/bin/firebase.js deploy --only firestore:rules,hosting --project dj-booking-app-9931b
+[debug] [2026-04-30T15:07:10.012Z] CLI Version:   13.29.1
+[debug] [2026-04-30T15:07:10.013Z] Platform:      darwin
+[debug] [2026-04-30T15:07:10.013Z] Node Version:  v18.20.5
+[debug] [2026-04-30T15:07:10.017Z] Time:          Thu Apr 30 2026 17:07:10 GMT+0200 (Central European Summer Time)
+[debug] [2026-04-30T15:07:10.017Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-30T15:07:10.062Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-30T15:07:10.063Z] > authorizing via signed-in user (smaresca97@gmail.com)
+[debug] [2026-04-30T15:07:10.064Z] [iam] checking project dj-booking-app-9931b for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-04-30T15:07:10.066Z] No OAuth tokens found
+[debug] [2026-04-30T15:07:10.067Z] No OAuth tokens found
+[debug] [2026-04-30T15:07:10.067Z] > refreshing access token with scopes: []
+[debug] [2026-04-30T15:07:10.068Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-04-30T15:07:10.068Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-30T15:07:10.326Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-04-30T15:07:10.327Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-30T15:07:10.334Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions [none]
+[debug] [2026-04-30T15:07:10.334Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions x-goog-quota-user=projects/dj-booking-app-9931b
+[debug] [2026-04-30T15:07:10.334Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-04-30T15:07:11.159Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions 200
+[debug] [2026-04-30T15:07:11.159Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-04-30T15:07:11.160Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:11.160Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:11.160Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dj-booking-app-9931b [none]
+[debug] [2026-04-30T15:07:11.712Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dj-booking-app-9931b 200
+[debug] [2026-04-30T15:07:11.713Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dj-booking-app-9931b {"projectId":"dj-booking-app-9931b","projectNumber":"977337121382","displayName":"dj-booking-app","name":"projects/dj-booking-app-9931b","resources":{"hostingSite":"dj-booking-app-9931b"},"state":"ACTIVE","etag":"1_c0b5c9ab-9105-4673-a9e4-d2c4b633cd3d"}
+[info] 
+[info] === Deploying to 'dj-booking-app-9931b'...
+[info] 
+[info] i  deploying firestore, hosting 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-04-30T15:07:11.721Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:11.721Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:11.722Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b:test [none]
+[debug] [2026-04-30T15:07:11.722Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b:test [omitted]
+[debug] [2026-04-30T15:07:12.084Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b:test 200
+[debug] [2026-04-30T15:07:12.084Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b:test {}
+[info] ✔  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-04-30T15:07:12.090Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:12.090Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:12.090Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions [none]
+[debug] [2026-04-30T15:07:12.090Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-04-30T15:07:14.046Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions 200
+[debug] [2026-04-30T15:07:14.047Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions {"name":"projects/977337121382/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-04-30T15:07:14.051Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:14.052Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:14.056Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b/releases pageSize=10&pageToken=
+[debug] [2026-04-30T15:07:14.363Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b/releases 200
+[debug] [2026-04-30T15:07:14.363Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b/releases {"releases":[{"name":"projects/dj-booking-app-9931b/releases/cloud.firestore","rulesetName":"projects/dj-booking-app-9931b/rulesets/c4a56360-4cff-46ca-ab8f-665217c2b745","createTime":"2026-04-30T14:49:56.026265Z","updateTime":"2026-04-30T14:51:59.241379Z"}]}
+[debug] [2026-04-30T15:07:14.363Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:14.363Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:14.364Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b/rulesets/c4a56360-4cff-46ca-ab8f-665217c2b745 [none]
+[debug] [2026-04-30T15:07:15.140Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b/rulesets/c4a56360-4cff-46ca-ab8f-665217c2b745 200
+[debug] [2026-04-30T15:07:15.140Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b/rulesets/c4a56360-4cff-46ca-ab8f-665217c2b745 [omitted]
+[info] i  firestore: uploading rules firestore.rules... 
+[debug] [2026-04-30T15:07:15.143Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:15.143Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:15.143Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b/rulesets [none]
+[debug] [2026-04-30T15:07:15.144Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b/rulesets [omitted]
+[debug] [2026-04-30T15:07:16.171Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b/rulesets 200
+[debug] [2026-04-30T15:07:16.171Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b/rulesets {"name":"projects/dj-booking-app-9931b/rulesets/0d9a4262-69fa-475d-8e9d-2a457f38902f","source":{"files":[{"content":"rules_version = '2';\n\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    function signedIn() {\n      return request.auth != null;\n    }\n\n    function isOwner(userId) {\n      return signedIn() && request.auth.uid == userId;\n    }\n\n    function isBootstrapAdminEmail() {\n      return signedIn() && request.auth.token.email in ['smaresca97@gmail.com'];\n    }\n\n    function isAdmin() {\n      return signedIn()\n        && exists(/databases/$(database)/documents/users/$(request.auth.uid))\n        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'\n        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.status == 'approved';\n    }\n\n    function isApprovedDjOrAdmin() {\n      return signedIn()\n        && exists(/databases/$(database)/documents/users/$(request.auth.uid))\n        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.status == 'approved'\n        && (\n          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'dj'\n          || get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'\n        );\n    }\n\n    match /users/{userId} {\n      allow read: if isOwner(userId) || isAdmin();\n\n      allow create: if isOwner(userId)\n        && (\n          (\n            request.resource.data.role == 'dj'\n            && request.resource.data.status == 'pending'\n          )\n          || (\n            isBootstrapAdminEmail()\n            && request.resource.data.role == 'admin'\n            && request.resource.data.status == 'approved'\n          )\n        );\n\n      allow update: if isAdmin()\n        || (\n          isOwner(userId)\n          && request.resource.data.role == resource.data.role\n          && request.resource.data.status == resource.data.status\n        );\n\n      allow delete: if false;\n    }\n\n    match /djProfiles/{djId} {\n      allow read: if true;\n      allow create, update: if isApprovedDjOrAdmin() && (request.auth.uid == djId || isAdmin());\n      allow delete: if false;\n    }\n\n    match /availability/{availabilityId} {\n      allow read: if true;\n      allow create, update: if isApprovedDjOrAdmin()\n        && request.resource.data.djId is string\n        && (request.resource.data.djId == request.auth.uid || isAdmin())\n        && request.resource.data.date is string\n        && request.resource.data.status in ['AVAILABLE', 'NOT_AVAILABLE'];\n      allow delete: if false;\n    }\n  }\n}\n","name":"firestore.rules"}]},"createTime":"2026-04-30T15:07:16.028287Z","metadata":{"services":["cloud.firestore"]}}
+[debug] [2026-04-30T15:07:16.172Z] [rules] created ruleset projects/dj-booking-app-9931b/rulesets/0d9a4262-69fa-475d-8e9d-2a457f38902f
+[info] i  hosting[dj-booking-app-9931b]: beginning deploy... 
+[info] i  hosting[dj-booking-app-9931b]: found 5 files in dist/dj-booking-app/browser 
+[debug] [2026-04-30T15:07:16.192Z] [hosting] uploading with 200 concurrency
+[debug] [2026-04-30T15:07:16.230Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:16.230Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:16.232Z] [hosting] hash cache [ZGlzdC9kai1ib29raW5nLWFwcC9icm93c2Vy] stored for 5 files
+[debug] [2026-04-30T15:07:16.232Z] [hosting][hash queue][FINAL] {"max":33,"min":3,"avg":9.8,"active":0,"complete":5,"success":5,"errored":0,"retried":0,"total":5,"elapsed":37}
+[debug] [2026-04-30T15:07:16.232Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/977337121382/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8:populateFiles [none]
+[debug] [2026-04-30T15:07:16.232Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/977337121382/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8:populateFiles {"files":{"/favicon.ico":"f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837","/index.html":"b07f7ddf61fdee458a721c3fe3d1544832ff4b9de35d5821d482b3b3488553cf","/styles-63CBOIBL.css":"2672b66ad096be41e756fb5bb8dd6fc016ef06d8b6924483f3005bd7bd5e5817","/polyfills-FFHMD2TL.js":"02522c25699ab93e99a93914c3fc1158c874090dc123472be90c6746e6cf2d13","/main-FKNLZZ3V.js":"ed9d992d923de58c3e10c90855561e3e27e08d76af813b33926376bd676b1e22"}}
+[debug] [2026-04-30T15:07:17.338Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/977337121382/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8:populateFiles 200
+[debug] [2026-04-30T15:07:17.338Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/977337121382/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8:populateFiles {"uploadRequiredHashes":["ed9d992d923de58c3e10c90855561e3e27e08d76af813b33926376bd676b1e22","b07f7ddf61fdee458a721c3fe3d1544832ff4b9de35d5821d482b3b3488553cf"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8/files"}
+[debug] [2026-04-30T15:07:17.339Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:17.339Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:17.340Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:17.340Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:17.340Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8/files/ed9d992d923de58c3e10c90855561e3e27e08d76af813b33926376bd676b1e22 [none]
+[debug] [2026-04-30T15:07:17.341Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8/files/ed9d992d923de58c3e10c90855561e3e27e08d76af813b33926376bd676b1e22 [stream]
+[debug] [2026-04-30T15:07:17.343Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8/files/b07f7ddf61fdee458a721c3fe3d1544832ff4b9de35d5821d482b3b3488553cf [none]
+[debug] [2026-04-30T15:07:17.343Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8/files/b07f7ddf61fdee458a721c3fe3d1544832ff4b9de35d5821d482b3b3488553cf [stream]
+[debug] [2026-04-30T15:07:17.344Z] [hosting][populate queue][FINAL] {"max":1110,"min":1110,"avg":1110,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1114}
+[debug] [2026-04-30T15:07:17.344Z] [hosting] uploads queued: 2
+[info] i  hosting: uploading new files [0/2] (0%) 
+[debug] [2026-04-30T15:07:18.623Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8/files/b07f7ddf61fdee458a721c3fe3d1544832ff4b9de35d5821d482b3b3488553cf 200
+[debug] [2026-04-30T15:07:18.623Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8/files/b07f7ddf61fdee458a721c3fe3d1544832ff4b9de35d5821d482b3b3488553cf [stream]
+[debug] [2026-04-30T15:07:18.942Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8/files/ed9d992d923de58c3e10c90855561e3e27e08d76af813b33926376bd676b1e22 200
+[debug] [2026-04-30T15:07:18.943Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8/files/ed9d992d923de58c3e10c90855561e3e27e08d76af813b33926376bd676b1e22 [stream]
+[debug] [2026-04-30T15:07:18.943Z] [hosting][upload queue][FINAL] {"max":1605,"min":1284,"avg":1444.5,"active":0,"complete":2,"success":2,"errored":0,"retried":0,"total":2,"elapsed":1605}
+[info] i  hosting: upload complete 
+[info] ✔  hosting[dj-booking-app-9931b]: file upload complete 
+[debug] [2026-04-30T15:07:18.944Z] [hosting] deploy completed after 2768ms
+[debug] [2026-04-30T15:07:18.944Z] [rules] releasing cloud.firestore/(default) with ruleset projects/dj-booking-app-9931b/rulesets/0d9a4262-69fa-475d-8e9d-2a457f38902f
+[debug] [2026-04-30T15:07:18.944Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:18.944Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:18.944Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b/releases/cloud.firestore/(default) [none]
+[debug] [2026-04-30T15:07:18.945Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b/releases/cloud.firestore/(default) {"release":{"name":"projects/dj-booking-app-9931b/releases/cloud.firestore/(default)","rulesetName":"projects/dj-booking-app-9931b/rulesets/0d9a4262-69fa-475d-8e9d-2a457f38902f"}}
+[debug] [2026-04-30T15:07:19.544Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b/releases/cloud.firestore/(default) 200
+[debug] [2026-04-30T15:07:19.545Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/dj-booking-app-9931b/releases/cloud.firestore/(default) {"name":"projects/dj-booking-app-9931b/releases/cloud.firestore","rulesetName":"projects/dj-booking-app-9931b/rulesets/0d9a4262-69fa-475d-8e9d-2a457f38902f","createTime":"2026-04-30T14:49:56.026265Z","updateTime":"2026-04-30T15:07:19.493899Z"}
+[debug] [2026-04-30T15:07:19.545Z] [rules] updated release projects/dj-booking-app-9931b/releases/cloud.firestore
+[info] ✔  firestore: released rules firestore.rules to cloud.firestore 
+[debug] [2026-04-30T15:07:19.545Z] [
+  {
+    "config": {
+      "public": "dist/dj-booking-app/browser",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "dj-booking-app-9931b"
+    },
+    "version": "projects/977337121382/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8"
+  }
+]
+[info] i  hosting[dj-booking-app-9931b]: finalizing version... 
+[debug] [2026-04-30T15:07:19.546Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:19.546Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:19.547Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8 updateMask=status%2Cconfig
+[debug] [2026-04-30T15:07:19.547Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2026-04-30T15:07:21.393Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8 200
+[debug] [2026-04-30T15:07:21.394Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8 {"name":"projects/977337121382/sites/dj-booking-app-9931b/versions/03d0f2fc80b9d9a8","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-04-30T15:07:12.962294Z","createUser":{"email":"smaresca97@gmail.com"},"finalizeTime":"2026-04-30T15:07:21.212512Z","finalizeUser":{"email":"smaresca97@gmail.com"}}
+[debug] [2026-04-30T15:07:21.394Z] [hosting] finalized version for dj-booking-app-9931b:[object Object]
+[info] ✔  hosting[dj-booking-app-9931b]: version finalized 
+[info] i  hosting[dj-booking-app-9931b]: releasing new version... 
+[debug] [2026-04-30T15:07:21.394Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:21.394Z] Checked if tokens are valid: true, expires at: 1777565229327
+[debug] [2026-04-30T15:07:21.395Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/channels/live/releases versionName=projects%2F977337121382%2Fsites%2Fdj-booking-app-9931b%2Fversions%2F03d0f2fc80b9d9a8
+[debug] [2026-04-30T15:07:21.395Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/channels/live/releases {}
+[debug] [2026-04-30T15:07:23.069Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/channels/live/releases 200
+[debug] [2026-04-30T15:07:50.442Z] ----------------------------------------------------------------------
+[debug] [2026-04-30T15:07:50.443Z] Command:       /Users/Work/.nvm/versions/node/v18.20.5/bin/node /Users/Work/.npm-global/lib/node_modules/firebase-tools/lib/bin/firebase.js deploy --only hosting --project dj-booking-app-9931b
+[debug] [2026-04-30T15:07:50.443Z] CLI Version:   13.29.1
+[debug] [2026-04-30T15:07:50.443Z] Platform:      darwin
+[debug] [2026-04-30T15:07:50.443Z] Node Version:  v18.20.5
+[debug] [2026-04-30T15:07:50.446Z] Time:          Thu Apr 30 2026 17:07:50 GMT+0200 (Central European Summer Time)
+[debug] [2026-04-30T15:07:50.447Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-30T15:07:50.486Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-30T15:07:50.486Z] > authorizing via signed-in user (smaresca97@gmail.com)
+[debug] [2026-04-30T15:07:50.487Z] [iam] checking project dj-booking-app-9931b for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-04-30T15:07:50.488Z] No OAuth tokens found
+[debug] [2026-04-30T15:07:50.488Z] No OAuth tokens found
+[debug] [2026-04-30T15:07:50.488Z] > refreshing access token with scopes: []
+[debug] [2026-04-30T15:07:50.489Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-04-30T15:07:50.489Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-30T15:07:50.687Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-04-30T15:07:50.687Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-30T15:07:50.694Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions [none]
+[debug] [2026-04-30T15:07:50.694Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions x-goog-quota-user=projects/dj-booking-app-9931b
+[debug] [2026-04-30T15:07:50.694Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-04-30T15:07:50.990Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions 200
+[debug] [2026-04-30T15:07:50.990Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/dj-booking-app-9931b:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-04-30T15:07:50.991Z] Checked if tokens are valid: true, expires at: 1777565269687
+[debug] [2026-04-30T15:07:50.991Z] Checked if tokens are valid: true, expires at: 1777565269687
+[debug] [2026-04-30T15:07:50.992Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dj-booking-app-9931b [none]
+[debug] [2026-04-30T15:07:51.497Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dj-booking-app-9931b 200
+[debug] [2026-04-30T15:07:51.498Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dj-booking-app-9931b {"projectId":"dj-booking-app-9931b","projectNumber":"977337121382","displayName":"dj-booking-app","name":"projects/dj-booking-app-9931b","resources":{"hostingSite":"dj-booking-app-9931b"},"state":"ACTIVE","etag":"1_c0b5c9ab-9105-4673-a9e4-d2c4b633cd3d"}
+[info] 
+[info] === Deploying to 'dj-booking-app-9931b'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-04-30T15:07:51.503Z] Checked if tokens are valid: true, expires at: 1777565269687
+[debug] [2026-04-30T15:07:51.504Z] Checked if tokens are valid: true, expires at: 1777565269687
+[debug] [2026-04-30T15:07:51.504Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions [none]
+[debug] [2026-04-30T15:07:51.504Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-04-30T15:07:53.073Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions 200
+[debug] [2026-04-30T15:07:53.073Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions {"name":"projects/977337121382/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[dj-booking-app-9931b]: beginning deploy... 
+[info] i  hosting[dj-booking-app-9931b]: found 5 files in dist/dj-booking-app/browser 
+[debug] [2026-04-30T15:07:53.095Z] [hosting] uploading with 200 concurrency
+[debug] [2026-04-30T15:07:53.131Z] Checked if tokens are valid: true, expires at: 1777565269687
+[debug] [2026-04-30T15:07:53.131Z] Checked if tokens are valid: true, expires at: 1777565269687
+[debug] [2026-04-30T15:07:53.131Z] [hosting] hash cache [ZGlzdC9kai1ib29raW5nLWFwcC9icm93c2Vy] stored for 5 files
+[debug] [2026-04-30T15:07:53.132Z] [hosting][hash queue][FINAL] {"max":31,"min":3,"avg":9.6,"active":0,"complete":5,"success":5,"errored":0,"retried":0,"total":5,"elapsed":35}
+[debug] [2026-04-30T15:07:53.132Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/977337121382/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3:populateFiles [none]
+[debug] [2026-04-30T15:07:53.132Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/977337121382/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3:populateFiles {"files":{"/favicon.ico":"f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837","/index.html":"6f6286fa7a160c7e74677366da77092b1c77f7b96d49d0f40f53f8b2e17f3200","/styles-63CBOIBL.css":"2672b66ad096be41e756fb5bb8dd6fc016ef06d8b6924483f3005bd7bd5e5817","/polyfills-FFHMD2TL.js":"02522c25699ab93e99a93914c3fc1158c874090dc123472be90c6746e6cf2d13","/main-7TZRSCOZ.js":"808f9cc4e75b6e1db874f50c43ec57ccba75e09e0b0576a08d8a05afdbeb5e2f"}}
+[debug] [2026-04-30T15:07:54.159Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/977337121382/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3:populateFiles 200
+[debug] [2026-04-30T15:07:54.159Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/977337121382/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3:populateFiles {"uploadRequiredHashes":["808f9cc4e75b6e1db874f50c43ec57ccba75e09e0b0576a08d8a05afdbeb5e2f","6f6286fa7a160c7e74677366da77092b1c77f7b96d49d0f40f53f8b2e17f3200"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3/files"}
+[debug] [2026-04-30T15:07:54.161Z] Checked if tokens are valid: true, expires at: 1777565269687
+[debug] [2026-04-30T15:07:54.161Z] Checked if tokens are valid: true, expires at: 1777565269687
+[debug] [2026-04-30T15:07:54.162Z] Checked if tokens are valid: true, expires at: 1777565269687
+[debug] [2026-04-30T15:07:54.162Z] Checked if tokens are valid: true, expires at: 1777565269687
+[debug] [2026-04-30T15:07:54.163Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3/files/808f9cc4e75b6e1db874f50c43ec57ccba75e09e0b0576a08d8a05afdbeb5e2f [none]
+[debug] [2026-04-30T15:07:54.163Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3/files/808f9cc4e75b6e1db874f50c43ec57ccba75e09e0b0576a08d8a05afdbeb5e2f [stream]
+[debug] [2026-04-30T15:07:54.165Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3/files/6f6286fa7a160c7e74677366da77092b1c77f7b96d49d0f40f53f8b2e17f3200 [none]
+[debug] [2026-04-30T15:07:54.165Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3/files/6f6286fa7a160c7e74677366da77092b1c77f7b96d49d0f40f53f8b2e17f3200 [stream]
+[debug] [2026-04-30T15:07:54.167Z] [hosting][populate queue][FINAL] {"max":1032,"min":1032,"avg":1032,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1036}
+[debug] [2026-04-30T15:07:54.167Z] [hosting] uploads queued: 2
+[info] i  hosting: uploading new files [0/2] (0%) 
+[debug] [2026-04-30T15:07:55.384Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3/files/6f6286fa7a160c7e74677366da77092b1c77f7b96d49d0f40f53f8b2e17f3200 200
+[debug] [2026-04-30T15:07:55.385Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3/files/6f6286fa7a160c7e74677366da77092b1c77f7b96d49d0f40f53f8b2e17f3200 [stream]
+[debug] [2026-04-30T15:07:55.698Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3/files/808f9cc4e75b6e1db874f50c43ec57ccba75e09e0b0576a08d8a05afdbeb5e2f 200
+[debug] [2026-04-30T15:07:55.698Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3/files/808f9cc4e75b6e1db874f50c43ec57ccba75e09e0b0576a08d8a05afdbeb5e2f [stream]
+[debug] [2026-04-30T15:07:55.698Z] [hosting][upload queue][FINAL] {"max":1538,"min":1224,"avg":1381,"active":0,"complete":2,"success":2,"errored":0,"retried":0,"total":2,"elapsed":1538}
+[info] i  hosting: upload complete 
+[info] ✔  hosting[dj-booking-app-9931b]: file upload complete 
+[debug] [2026-04-30T15:07:55.699Z] [hosting] deploy completed after 2623ms
+[debug] [2026-04-30T15:07:55.700Z] [
+  {
+    "config": {
+      "public": "dist/dj-booking-app/browser",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "dj-booking-app-9931b"
+    },
+    "version": "projects/977337121382/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3"
+  }
+]
+[info] i  hosting[dj-booking-app-9931b]: finalizing version... 
+[debug] [2026-04-30T15:07:55.702Z] Checked if tokens are valid: true, expires at: 1777565269687
+[debug] [2026-04-30T15:07:55.702Z] Checked if tokens are valid: true, expires at: 1777565269687
+[debug] [2026-04-30T15:07:55.703Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3 updateMask=status%2Cconfig
+[debug] [2026-04-30T15:07:55.703Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2026-04-30T15:07:57.534Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3 200
+[debug] [2026-04-30T15:07:57.534Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3 {"name":"projects/977337121382/sites/dj-booking-app-9931b/versions/8e3d3bffd234fed3","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-04-30T15:07:52.153069Z","createUser":{"email":"smaresca97@gmail.com"},"finalizeTime":"2026-04-30T15:07:57.402862Z","finalizeUser":{"email":"smaresca97@gmail.com"}}
+[debug] [2026-04-30T15:07:57.534Z] [hosting] finalized version for dj-booking-app-9931b:[object Object]
+[info] ✔  hosting[dj-booking-app-9931b]: version finalized 
+[info] i  hosting[dj-booking-app-9931b]: releasing new version... 
+[debug] [2026-04-30T15:07:57.535Z] Checked if tokens are valid: true, expires at: 1777565269687
+[debug] [2026-04-30T15:07:57.535Z] Checked if tokens are valid: true, expires at: 1777565269687
+[debug] [2026-04-30T15:07:57.535Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/channels/live/releases versionName=projects%2F977337121382%2Fsites%2Fdj-booking-app-9931b%2Fversions%2F8e3d3bffd234fed3
+[debug] [2026-04-30T15:07:57.535Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/channels/live/releases {}
+[debug] [2026-04-30T15:07:59.422Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/dj-booking-app-9931b/channels/live/releases 200

@@ -1,0 +1,76 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    function isBootstrapAdminEmail() {
+      return signedIn() && request.auth.token.email in ['smaresca97@gmail.com'];
+    }
+
+    function isAdmin() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.status == 'approved';
+    }
+
+    function isApprovedDjOrAdmin() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.status == 'approved'
+        && (
+          get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'dj'
+          || get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'
+        );
+    }
+
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+
+      allow create: if isOwner(userId)
+        && (
+          (
+            request.resource.data.role == 'dj'
+            && request.resource.data.status == 'pending'
+          )
+          || (
+            isBootstrapAdminEmail()
+            && request.resource.data.role == 'admin'
+            && request.resource.data.status == 'approved'
+          )
+        );
+
+      allow update: if isAdmin()
+        || (
+          isOwner(userId)
+          && request.resource.data.role == resource.data.role
+          && request.resource.data.status == resource.data.status
+        );
+
+      allow delete: if false;
+    }
+
+    match /djProfiles/{djId} {
+      allow read: if true;
+      allow create, update: if isApprovedDjOrAdmin() && (request.auth.uid == djId || isAdmin());
+      allow delete: if false;
+    }
+
+    match /availability/{availabilityId} {
+      allow read: if true;
+      allow create, update: if isApprovedDjOrAdmin()
+        && request.resource.data.djId is string
+        && (request.resource.data.djId == request.auth.uid || isAdmin())
+        && request.resource.data.date is string
+        && request.resource.data.status in ['AVAILABLE', 'NOT_AVAILABLE'];
+      allow delete: if false;
+    }
+  }
+}
