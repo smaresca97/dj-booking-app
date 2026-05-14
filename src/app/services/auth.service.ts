@@ -22,8 +22,8 @@ import { adminEmails } from '../../environments/firebase';
 import { FirebaseClientService } from './firebase-client.service';
 import { DjService } from './dj.service';
 
-export type UserRole = 'dj' | 'guest' | 'admin';
-export type UserStatus = 'pending' | 'approved' | 'rejected';
+export type UserRole = 'dj' | 'venue' | 'guest' | 'admin';
+export type UserStatus = 'pending' | 'approved' | 'rejected' | 'deleted';
 
 export interface CurrentUser {
   id: string;
@@ -44,11 +44,14 @@ export interface ManagedUser {
   createdAt?: Timestamp;
   approvedAt?: Timestamp;
   rejectedAt?: Timestamp;
+  deletedAt?: Timestamp;
+  restoredAt?: Timestamp;
 }
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private readonly guestKey = 'dj-auth-guest';
+  private readonly preferredRoleKey = 'dj-auth-preferred-role';
   private readonly provider = new GoogleAuthProvider();
   private readyResolver!: () => void;
 
@@ -83,6 +86,14 @@ export class AuthService {
   async signInWithGoogle(): Promise<CurrentUser | null> {
     const credential = await signInWithPopup(this.firebase.auth, this.provider);
     return this.syncFirebaseUser(credential.user);
+  }
+
+  setPreferredRole(role: 'dj' | 'venue'): void {
+    localStorage.setItem(this.preferredRoleKey, role);
+  }
+
+  getPreferredRole(): 'dj' | 'venue' {
+    return localStorage.getItem(this.preferredRoleKey) === 'venue' ? 'venue' : 'dj';
   }
 
   enterAsGuest(): void {
@@ -122,6 +133,16 @@ export class AuthService {
     return (user?.role === 'dj' || user?.role === 'admin') && user.status === 'approved';
   }
 
+  isVenue(): boolean {
+    const role = this.currentUser()?.role;
+    return role === 'venue' || role === 'admin';
+  }
+
+  isApprovedVenue(): boolean {
+    const user = this.currentUser();
+    return (user?.role === 'venue' || user?.role === 'admin') && user.status === 'approved';
+  }
+
   isAdmin(): boolean {
     const user = this.currentUser();
     return user?.role === 'admin' && user.status === 'approved';
@@ -134,6 +155,11 @@ export class AuthService {
   getCurrentDj(): string | null {
     const user = this.currentUser();
     return user?.role === 'dj' || user?.role === 'admin' ? user.id : null;
+  }
+
+  getCurrentVenue(): string | null {
+    const user = this.currentUser();
+    return user?.role === 'venue' || user?.role === 'admin' ? user.id : null;
   }
 
   getCurrentName(): string | null {
@@ -154,10 +180,13 @@ export class AuthService {
       .sort((a, b) => (b.createdAt?.toMillis() ?? 0) - (a.createdAt?.toMillis() ?? 0));
   }
 
-  async approveUser(userId: string): Promise<void> {
+  async approveUser(userId: string, role?: 'dj' | 'venue'): Promise<void> {
     const currentAdmin = this.currentUser();
+    const userSnapshot = await getDoc(doc(this.firebase.db, 'users', userId));
+    const currentRole = userSnapshot.exists() ? this.toManagedUser(userSnapshot.id, userSnapshot.data()).role : 'dj';
+
     await updateDoc(doc(this.firebase.db, 'users', userId), {
-      role: 'dj',
+      role: role ?? (currentRole === 'venue' ? 'venue' : 'dj'),
       status: 'approved',
       approvedAt: serverTimestamp(),
       approvedBy: currentAdmin?.id ?? null
@@ -173,6 +202,29 @@ export class AuthService {
     });
   }
 
+  async deleteApprovedUser(userId: string): Promise<void> {
+    const currentAdmin = this.currentUser();
+
+    if (currentAdmin?.id === userId) {
+      throw new Error('Admins cannot delete their own account.');
+    }
+
+    await updateDoc(doc(this.firebase.db, 'users', userId), {
+      status: 'deleted',
+      deletedAt: serverTimestamp(),
+      deletedBy: currentAdmin?.id ?? null
+    });
+  }
+
+  async restoreDeletedUser(userId: string): Promise<void> {
+    const currentAdmin = this.currentUser();
+    await updateDoc(doc(this.firebase.db, 'users', userId), {
+      status: 'approved',
+      restoredAt: serverTimestamp(),
+      restoredBy: currentAdmin?.id ?? null
+    });
+  }
+
   private async syncFirebaseUser(firebaseUser: User): Promise<CurrentUser> {
     const userRef = doc(this.firebase.db, 'users', firebaseUser.uid);
     const snapshot = await getDoc(userRef);
@@ -184,7 +236,7 @@ export class AuthService {
         email: firebaseUser.email ?? '',
         name: firebaseUser.displayName || this.toDisplayName(firebaseUser.email),
         photoUrl: firebaseUser.photoURL ?? '',
-        role: isConfiguredAdmin ? 'admin' : 'dj',
+        role: isConfiguredAdmin ? 'admin' : this.getPreferredRole(),
         status: isConfiguredAdmin ? 'approved' : 'pending'
       };
 
@@ -221,6 +273,28 @@ export class AuthService {
       };
     }
 
+    const preferredRole = this.getPreferredRole();
+    const shouldResubmitAccessRequest =
+      existingUser.role !== 'admin'
+      && existingUser.status !== 'approved'
+      && (existingUser.role !== preferredRole || existingUser.status !== 'pending');
+
+    if (shouldResubmitAccessRequest) {
+      await updateDoc(userRef, {
+        ...userPatch,
+        role: preferredRole,
+        status: 'pending',
+        requestedAt: serverTimestamp()
+      });
+
+      return {
+        ...existingUser,
+        ...userPatch,
+        role: preferredRole,
+        status: 'pending'
+      };
+    }
+
     await updateDoc(userRef, userPatch);
     return {
       ...existingUser,
@@ -253,7 +327,9 @@ export class AuthService {
       status: (data['status'] as UserStatus) ?? 'pending',
       createdAt: data['createdAt'] as Timestamp | undefined,
       approvedAt: data['approvedAt'] as Timestamp | undefined,
-      rejectedAt: data['rejectedAt'] as Timestamp | undefined
+      rejectedAt: data['rejectedAt'] as Timestamp | undefined,
+      deletedAt: data['deletedAt'] as Timestamp | undefined,
+      restoredAt: data['restoredAt'] as Timestamp | undefined
     };
   }
 

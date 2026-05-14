@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { DjService } from '../../services/dj.service';
 import { I18nService } from '../../services/i18n.service';
+import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'app-login-page',
@@ -11,10 +12,10 @@ import { I18nService } from '../../services/i18n.service';
   imports: [CommonModule],
   template: `
     <main class="auth-page">
-      <section class="surface-strong w-full max-w-md card-pad">
+      <section class="surface-strong login-panel w-full max-w-md card-pad">
         <div class="page-header mb-8">
           <div class="min-w-0">
-            <p class="page-kicker">{{ t('loginEyebrow') }}</p>
+            <p class="page-kicker">{{ preferredRole === 'venue' ? t('venueArea') : t('loginEyebrow') }}</p>
             <h1 class="page-title">{{ t('appName') }}</h1>
           </div>
 
@@ -23,8 +24,13 @@ import { I18nService } from '../../services/i18n.service';
           </button>
         </div>
 
-        <h2 class="text-2xl font-black leading-tight">{{ t('googleLoginTitle') }}</h2>
-        <p class="page-copy">{{ t('googleLoginSubtitle') }}</p>
+        <div class="login-step-card">
+          <div class="login-step-icon">G</div>
+          <div class="min-w-0">
+            <h2 class="text-2xl font-black leading-tight">{{ t('googleLoginTitle') }}</h2>
+            <p class="page-copy">{{ preferredRole === 'venue' ? t('venueLoginSubtitle') : t('googleLoginSubtitle') }}</p>
+          </div>
+        </div>
 
         <button type="button" class="primary-action mt-7 w-full" [disabled]="loading()" (click)="signInWithGoogle()">
           {{ loading() ? t('accessing') : t('signInWithGoogle') }}
@@ -35,7 +41,7 @@ import { I18nService } from '../../services/i18n.service';
         </button>
 
         <p class="mt-4 text-sm text-pink-300" *ngIf="error()">{{ t('googleLoginError') }}</p>
-        <p class="mt-5 text-xs text-slate-400">{{ t('approvalHint') }}</p>
+        <p class="approval-note mt-5">{{ preferredRole === 'venue' ? t('venueApprovalHint') : t('approvalHint') }}</p>
       </section>
     </main>
   `
@@ -48,8 +54,13 @@ export class LoginPageComponent {
     private auth: AuthService,
     private djService: DjService,
     private router: Router,
+    private toast: ToastService,
     public i18n: I18nService
   ) {}
+
+  get preferredRole(): 'dj' | 'venue' {
+    return this.auth.getPreferredRole();
+  }
 
   async signInWithGoogle(): Promise<void> {
     this.error.set(false);
@@ -63,6 +74,11 @@ export class LoginPageComponent {
         return;
       }
 
+      if (user?.role === 'venue') {
+        await this.router.navigateByUrl(user.status === 'approved' ? '/venue' : '/pending');
+        return;
+      }
+
       if (user?.status !== 'approved') {
         await this.router.navigateByUrl('/pending');
         return;
@@ -72,6 +88,7 @@ export class LoginPageComponent {
       await this.router.navigateByUrl(destination);
     } catch {
       this.error.set(true);
+      this.toast.error(this.t('googleLoginError'));
     } finally {
       this.loading.set(false);
     }

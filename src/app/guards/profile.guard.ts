@@ -13,10 +13,6 @@ export const profileGuard: CanActivateFn = () => {
       return auth.isDj() ? router.createUrlTree(['/pending']) : router.createUrlTree(['/search']);
     }
 
-    if (auth.isAdmin()) {
-      return true;
-    }
-
     if (await djService.hasCompleteProfile(auth.getCurrentDj())) {
       return true;
     }

@@ -1,0 +1,26 @@
+{
+  "name": "DJ Booking",
+  "short_name": "DJ Booking",
+  "description": "Gestione disponibilita DJ e ricerca artisti disponibili.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "fullscreen"],
+  "orientation": "portrait",
+  "theme_color": "#050507",
+  "background_color": "#050507",
+  "icons": [
+    {
+      "src": "/assets/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

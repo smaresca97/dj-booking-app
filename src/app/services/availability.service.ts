@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs, query, serverTimestamp, setDoc, where } from 'firebase/firestore';
 import { FirebaseClientService } from './firebase-client.service';
 
 export type Availability = 'AVAILABLE' | 'NOT_AVAILABLE';
@@ -11,17 +11,17 @@ export class AvailabilityService {
   constructor(private firebase: FirebaseClientService) {}
 
   async setAvailability(djId: string, date: string, value: Availability): Promise<void> {
-    const data = this.readLocal();
-    data[djId] = data[djId] || {};
-    data[djId][date] = value;
-    this.writeLocal(data);
-
     await setDoc(this.availabilityRef(djId, date), {
       djId,
       date,
       status: value,
       updatedAt: serverTimestamp()
     });
+
+    const data = this.readLocal();
+    data[djId] = data[djId] || {};
+    data[djId][date] = value;
+    this.writeLocal(data);
   }
 
   async getAvailability(djId: string, date: string): Promise<Availability | null> {
@@ -36,12 +36,26 @@ export class AvailabilityService {
       return this.readLocal()[djId]?.[date] || null;
     }
 
-    return this.readLocal()[djId]?.[date] || null;
+    return null;
   }
 
   async getAvailableDjs(date: string, djIds: string[]): Promise<string[]> {
-    const statuses = await Promise.all(djIds.map(async (id) => [id, await this.getAvailability(id, date)] as const));
-    return statuses.filter(([, status]) => status === 'AVAILABLE').map(([id]) => id);
+    try {
+      const availabilityQuery = query(
+        collection(this.firebase.db, 'availability'),
+        where('date', '==', date)
+      );
+      const snapshot = await getDocs(availabilityQuery);
+      const requestedIds = new Set(djIds);
+
+      return snapshot.docs
+        .filter((item) => item.data()['status'] === 'AVAILABLE')
+        .map((item) => String(item.data()['djId'] ?? ''))
+        .filter((id) => requestedIds.has(id));
+    } catch {
+      const statuses = await Promise.all(djIds.map(async (id) => [id, await this.getAvailability(id, date)] as const));
+      return statuses.filter(([, status]) => status === 'AVAILABLE').map(([id]) => id);
+    }
   }
 
   private availabilityRef(djId: string, date: string) {
@@ -49,7 +63,11 @@ export class AvailabilityService {
   }
 
   private readLocal(): Record<string, Record<string, Availability>> {
-    return JSON.parse(localStorage.getItem(this.localKey) || '{}');
+    try {
+      return JSON.parse(localStorage.getItem(this.localKey) || '{}');
+    } catch {
+      return {};
+    }
   }
 
   private writeLocal(data: Record<string, Record<string, Availability>>): void {

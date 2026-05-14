@@ -12,6 +12,7 @@ export interface DjProfile {
   genres: string;
   bio: string;
   avatar: string;
+  photoUrl: string;
 }
 
 export interface DjProfileForm {
@@ -20,6 +21,7 @@ export interface DjProfileForm {
   city: string;
   genres: string;
   bio: string;
+  photoUrl: string;
 }
 
 type StoredDjProfile = Partial<DjProfile> & {
@@ -78,7 +80,8 @@ export class DjService {
       city: form.city.trim(),
       genres: form.genres.trim(),
       bio: form.bio.trim(),
-      avatar: '🎧'
+      avatar: '🎧',
+      photoUrl: form.photoUrl
     };
 
     this.saveLocalProfile(profile);
@@ -104,7 +107,8 @@ export class DjService {
         city: '',
         genres: '',
         bio: '',
-        avatar: '🎧'
+        avatar: '🎧',
+        photoUrl: ''
       });
     }
 
@@ -122,6 +126,7 @@ export class DjService {
           genres: '',
           bio: '',
           avatar: '🎧',
+          photoUrl: '',
           updatedAt: serverTimestamp()
         });
         return;
@@ -151,7 +156,8 @@ export class DjService {
       city: String(data['city'] ?? ''),
       genres: String(data['genres'] ?? ''),
       bio: String(data['bio'] ?? ''),
-      avatar: String(data['avatar'] ?? '🎧')
+      avatar: String(data['avatar'] ?? '🎧'),
+      photoUrl: String(data['photoUrl'] ?? '')
     };
   }
 
@@ -186,7 +192,8 @@ export class DjService {
           city: profile.city ?? '',
           genres: profile.genres ?? '',
           bio: profile.bio ?? '',
-          avatar: profile.avatar ?? '🎧'
+          avatar: profile.avatar ?? '🎧',
+          photoUrl: profile.photoUrl ?? ''
         }));
     } catch {
       return [];

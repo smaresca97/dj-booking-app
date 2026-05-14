@@ -8,7 +8,7 @@ import { I18nService } from '../../services/i18n.service';
   standalone: true,
   template: `
     <main class="auth-page">
-      <section class="surface-strong w-full max-w-md card-pad">
+      <section class="surface-strong welcome-panel w-full max-w-2xl card-pad">
         <div class="page-header mb-8">
           <div class="min-w-0">
             <p class="page-kicker">{{ t('welcomeEyebrow') }}</p>
@@ -23,12 +23,32 @@ import { I18nService } from '../../services/i18n.service';
         <h2 class="text-2xl font-black leading-tight">{{ t('welcomeTitle') }}</h2>
         <p class="page-copy">{{ t('welcomeSubtitle') }}</p>
 
-        <div class="mt-7 grid gap-3">
-          <button type="button" class="primary-action w-full" (click)="goToDjLogin()">
-            {{ t('iAmDj') }}
+        <div class="welcome-choice-grid welcome-choice-grid-3 mt-7">
+          <button type="button" class="welcome-choice welcome-choice-primary" (click)="goToDjLogin()">
+            <span class="welcome-choice-icon">DJ</span>
+            <span class="welcome-choice-text">
+              <strong>{{ t('welcomeDjTitle') }}</strong>
+              <small>{{ t('welcomeDjCopy') }}</small>
+            </span>
+            <span class="welcome-choice-action">{{ t('iAmDj') }}</span>
           </button>
-          <button type="button" class="secondary-action w-full" (click)="enterAsGuest()">
-            {{ t('findDj') }}
+
+          <button type="button" class="welcome-choice" (click)="goToVenueLogin()">
+            <span class="welcome-choice-icon">LC</span>
+            <span class="welcome-choice-text">
+              <strong>{{ t('welcomeVenueTitle') }}</strong>
+              <small>{{ t('welcomeVenueCopy') }}</small>
+            </span>
+            <span class="welcome-choice-action">{{ t('iAmVenue') }}</span>
+          </button>
+
+          <button type="button" class="welcome-choice" (click)="enterAsGuest()">
+            <span class="welcome-choice-icon">+</span>
+            <span class="welcome-choice-text">
+              <strong>{{ t('welcomeClientTitle') }}</strong>
+              <small>{{ t('welcomeClientCopy') }}</small>
+            </span>
+            <span class="welcome-choice-action">{{ t('findDj') }}</span>
           </button>
         </div>
       </section>
@@ -39,6 +59,12 @@ export class WelcomePageComponent {
   constructor(private auth: AuthService, private router: Router, public i18n: I18nService) {}
 
   goToDjLogin(): void {
+    this.auth.setPreferredRole('dj');
+    this.router.navigateByUrl('/login');
+  }
+
+  goToVenueLogin(): void {
+    this.auth.setPreferredRole('venue');
     this.router.navigateByUrl('/login');
   }
 
